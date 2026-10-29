@@ -1,0 +1,21 @@
+# 跨平台换行符策略：仓库内统一存 LF，工作区统一检出 LF
+# Windows / Linux / macOS 三端拉取后文件字节级一致，无转换警告
+* text=auto eol=lf
+
+# 二进制文件：禁止任何换行符转换（转了就损坏）
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.onnx binary
+*.pt binary
+*.bin binary
+*.safetensors binary
+
+# Windows 专有脚本保留 CRLF（在 Linux 上也不会被使用）
+*.bat text eol=crlf
+*.ps1 text eol=crlf
